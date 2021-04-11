@@ -1,0 +1,597 @@
+{
+    "Gojūon": [
+        {
+            "order": 0,
+            "rowConsonant": "-",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/a.mp3",
+                    "Katakana": "ア",
+                    "Hiragana": "あ",
+                    "Romaji": "a"
+                },
+                "i": {
+                    "order": 1,
+                    "file": "akiNoises/i.mp3",
+                    "Katakana": "イ",
+                    "Hiragana": "い",
+                    "Romaji": "i"
+                },
+                "u": {
+                    "order": 2,
+                    "file": "akiNoises/u.mp3",
+                    "Katakana": "ウ",
+                    "Hiragana": "う",
+                    "Romaji": "u"
+                },
+                "e": {
+                    "order": 3,
+                    "file": "akiNoises/e.mp3",
+                    "Katakana": "エ",
+                    "Hiragana": "え",
+                    "Romaji": "e"
+                },
+                "o": {
+                    "order": 4,
+                    "file": "akiNoises/o.mp3",
+                    "Katakana": "オ",
+                    "Hiragana": "お",
+                    "Romaji": "o"
+                }
+            }
+        },
+        {
+            "order": 1,
+            "rowConsonant": "k",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/ka.mp3",
+                    "Katakana": "カ",
+                    "Hiragana": "か",
+                    "Romaji": "ka"
+                },
+                "i": {
+                    "order": 1,
+                    "file": "akiNoises/ki.mp3",
+                    "Katakana": "キ",
+                    "Hiragana": "き",
+                    "Romaji": "ki"
+                },
+                "u": {
+                    "order": 2,
+                    "file": "akiNoises/ku.mp3",
+                    "Katakana": "ク",
+                    "Hiragana": "く",
+                    "Romaji": "ku"
+                },
+                "e": {
+                    "order": 3,
+                    "file": "akiNoises/ke.mp3",
+                    "Katakana": "ケ",
+                    "Hiragana": "け",
+                    "Romaji": "ke"
+                },
+                "o": {
+                    "order": 4,
+                    "file": "akiNoises/ko.mp3",
+                    "Katakana": "コ",
+                    "Hiragana": "こ",
+                    "Romaji": "ko"
+                }
+            }
+        },
+        {
+            "order": 2,
+            "rowConsonant": "g",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/ga.mp3",
+                    "Katakana": "ガ",
+                    "Hiragana": "が",
+                    "Romaji": "ga"
+                },
+                "i": {
+                    "order": 1,
+                    "file": "akiNoises/gi.mp3",
+                    "Katakana": "ギ",
+                    "Hiragana": "ぎ",
+                    "Romaji": "gi"
+                },
+                "u": {
+                    "order": 2,
+                    "file": "akiNoises/gu.mp3",
+                    "Katakana": "グ",
+                    "Hiragana": "ぐ",
+                    "Romaji": "gu"
+                },
+                "e": {
+                    "order": 3,
+                    "file": "akiNoises/ge.mp3",
+                    "Katakana": "ゲ",
+                    "Hiragana": "げ",
+                    "Romaji": "ge"
+                },
+                "o": {
+                    "order": 4,
+                    "file": "akiNoises/go.mp3",
+                    "Katakana": "ゴ",
+                    "Hiragana": "ご",
+                    "Romaji": "go"
+                }
+            }
+        },
+        {
+            "order": 3,
+            "rowConsonant": "s",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/sa.mp3",
+                    "Katakana": "サ",
+                    "Hiragana": "さ",
+                    "Romaji": "sa"
+                },
+                "i": {
+                    "order": 1,
+                    "file": "akiNoises/si.mp3",
+                    "Katakana": "シ",
+                    "Hiragana": "し",
+                    "Romaji": "shi"
+                },
+                "u": {
+                    "order": 2,
+                    "file": "akiNoises/su.mp3",
+                    "Katakana": "ス",
+                    "Hiragana": "す",
+                    "Romaji": "su"
+                },
+                "e": {
+                    "order": 3,
+                    "file": "akiNoises/se.mp3",
+                    "Katakana": "セ",
+                    "Hiragana": "せ",
+                    "Romaji": "se"
+                },
+                "o": {
+                    "order": 4,
+                    "file": "akiNoises/so.mp3",
+                    "Katakana": "ソ",
+                    "Hiragana": "そ",
+                    "Romaji": "so"
+                }
+            }
+        },
+        {
+            "order": 4,
+            "rowConsonant": "z",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/za.mp3",
+                    "Katakana": "ザ",
+                    "Hiragana": "ざ",
+                    "Romaji": "za"
+                },
+                "i": {
+                    "order": 1,
+                    "file": "akiNoises/zi.mp3",
+                    "Katakana": "ジ",
+                    "Hiragana": "じ",
+                    "Romaji": "ji"
+                },
+                "u": {
+                    "order": 2,
+                    "file": "akiNoises/zu.mp3",
+                    "Katakana": "ズ",
+                    "Hiragana": "ず",
+                    "Romaji": "zu"
+                },
+                "e": {
+                    "order": 3,
+                    "file": "akiNoises/ze.mp3",
+                    "Katakana": "ゼ",
+                    "Hiragana": "ぜ",
+                    "Romaji": "ze"
+                },
+                "o": {
+                    "order": 4,
+                    "file": "akiNoises/zo.mp3",
+                    "Katakana": "ゾ",
+                    "Hiragana": "ぞ",
+                    "Romaji": "zo"
+                }
+            }
+        },
+        {
+            "order": 5,
+            "rowConsonant": "t",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/ta.mp3",
+                    "Katakana": "タ",
+                    "Hiragana": "た",
+                    "Romaji": "ta"
+                },
+                "i": {
+                    "order": 1,
+                    "file": "akiNoises/ti.mp3",
+                    "Katakana": "チ",
+                    "Hiragana": "ち",
+                    "Romaji": "chi"
+                },
+                "u": {
+                    "order": 2,
+                    "file": "akiNoises/tu.mp3",
+                    "Katakana": "ツ",
+                    "Hiragana": "つ",
+                    "Romaji": "tsu"
+                },
+                "e": {
+                    "order": 3,
+                    "file": "akiNoises/te.mp3",
+                    "Katakana": "テ",
+                    "Hiragana": "て",
+                    "Romaji": "te"
+                },
+                "o": {
+                    "order": 4,
+                    "file": "akiNoises/to.mp3",
+                    "Katakana": "ト",
+                    "Hiragana": "と",
+                    "Romaji": "to"
+                }
+            }
+        },
+        {
+            "order": 6,
+            "rowConsonant": "d",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/da.mp3",
+                    "Katakana": "ダ",
+                    "Hiragana": "だ",
+                    "Romaji": "da"
+                },
+                "i": {
+                    "order": 1,
+                    "file": "akiNoises/di.mp3",
+                    "Katakana": "ヂ",
+                    "Hiragana": "ぢ",
+                    "Romaji": "ji"
+                },
+                "u": {
+                    "order": 2,
+                    "file": "akiNoises/du.mp3",
+                    "Katakana": "ヅ",
+                    "Hiragana": "づ",
+                    "Romaji": "zu"
+                },
+                "e": {
+                    "order": 3,
+                    "file": "akiNoises/de.mp3",
+                    "Katakana": "デ",
+                    "Hiragana": "で",
+                    "Romaji": "de"
+                },
+                "o": {
+                    "order": 4,
+                    "file": "akiNoises/do.mp3",
+                    "Katakana": "ド",
+                    "Hiragana": "ど",
+                    "Romaji": "do"
+                }
+            }
+        },
+        {
+            "order": 7,
+            "rowConsonant": "n",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/na.mp3",
+                    "Katakana": "ナ",
+                    "Hiragana": "な",
+                    "Romaji": "na"
+                },
+                "i": {
+                    "order": 1,
+                    "file": "akiNoises/ni.mp3",
+                    "Katakana": "ニ",
+                    "Hiragana": "に",
+                    "Romaji": "ni"
+                },
+                "u": {
+                    "order": 2,
+                    "file": "akiNoises/nu.mp3",
+                    "Katakana": "ヌ",
+                    "Hiragana": "ぬ",
+                    "Romaji": "nu"
+                },
+                "e": {
+                    "order": 3,
+                    "file": "akiNoises/ne.mp3",
+                    "Katakana": "ネ",
+                    "Hiragana": "ね",
+                    "Romaji": "ne"
+                },
+                "o": {
+                    "order": 4,
+                    "file": "akiNoises/no.mp3",
+                    "Katakana": "ノ",
+                    "Hiragana": "の",
+                    "Romaji": "no"
+                }
+            }
+        },
+        {
+            "order": 8,
+            "rowConsonant": "h",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/ha.mp3",
+                    "Katakana": "ハ",
+                    "Hiragana": "は",
+                    "Romaji": "ha"
+                },
+                "i": {
+                    "order": 1,
+                    "file": "akiNoises/hi.mp3",
+                    "Katakana": "ヒ",
+                    "Hiragana": "ひ",
+                    "Romaji": "hi"
+                },
+                "u": {
+                    "order": 2,
+                    "file": "akiNoises/hu.mp3",
+                    "Katakana": "フ",
+                    "Hiragana": "ふ",
+                    "Romaji": "fu"
+                },
+                "e": {
+                    "order": 3,
+                    "file": "akiNoises/he.mp3",
+                    "Katakana": "ヘ",
+                    "Hiragana": "へ",
+                    "Romaji": "he"
+                },
+                "o": {
+                    "order": 4,
+                    "file": "akiNoises/ho.mp3",
+                    "Katakana": "ホ",
+                    "Hiragana": "ほ",
+                    "Romaji": "ho"
+                }
+            }
+        },
+        {
+            "order": 9,
+            "rowConsonant": "b",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/ba.mp3",
+                    "Katakana": "バ",
+                    "Hiragana": "ば",
+                    "Romaji": "ba"
+                },
+                "i": {
+                    "order": 1,
+                    "file": "akiNoises/bi.mp3",
+                    "Katakana": "ビ",
+                    "Hiragana": "び",
+                    "Romaji": "bi"
+                },
+                "u": {
+                    "order": 2,
+                    "file": "akiNoises/bu.mp3",
+                    "Katakana": "ブ",
+                    "Hiragana": "ぶ",
+                    "Romaji": "bu"
+                },
+                "e": {
+                    "order": 3,
+                    "file": "akiNoises/be.mp3",
+                    "Katakana": "ベ",
+                    "Hiragana": "べ",
+                    "Romaji": "be"
+                },
+                "o": {
+                    "order": 4,
+                    "file": "akiNoises/bo.mp3",
+                    "Katakana": "ボ",
+                    "Hiragana": "ぼ",
+                    "Romaji": "bo"
+                }
+            }
+        },
+        {
+            "order": 10,
+            "rowConsonant": "p",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/pa.mp3",
+                    "Katakana": "パ",
+                    "Hiragana": "ぱ",
+                    "Romaji": "pa"
+                },
+                "i": {
+                    "order": 1,
+                    "file": "akiNoises/pi.mp3",
+                    "Katakana": "ピ",
+                    "Hiragana": "ぴ",
+                    "Romaji": "pi"
+                },
+                "u": {
+                    "order": 2,
+                    "file": "akiNoises/pu.mp3",
+                    "Katakana": "プ",
+                    "Hiragana": "ぷ",
+                    "Romaji": "pu"
+                },
+                "e": {
+                    "order": 3,
+                    "file": "akiNoises/pe.mp3",
+                    "Katakana": "ベ",
+                    "Hiragana": "べ",
+                    "Romaji": "be"
+                },
+                "o": {
+                    "order": 4,
+                    "file": "akiNoises/po.mp3",
+                    "Katakana": "ポ",
+                    "Hiragana": "ぽ",
+                    "Romaji": "po"
+                }
+            }
+        },
+        {
+            "order": 11,
+            "rowConsonant": "m",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/ma.mp3",
+                    "Katakana": "マ",
+                    "Hiragana": "ま",
+                    "Romaji": "ma"
+                },
+                "i": {
+                    "order": 1,
+                    "file": "akiNoises/mi.mp3",
+                    "Katakana": "ミ",
+                    "Hiragana": "み",
+                    "Romaji": "mi"
+                },
+                "u": {
+                    "order": 2,
+                    "file": "akiNoises/mu.mp3",
+                    "Katakana": "ム",
+                    "Hiragana": "む",
+                    "Romaji": "mu"
+                },
+                "e": {
+                    "order": 3,
+                    "file": "akiNoises/me.mp3",
+                    "Katakana": "メ",
+                    "Hiragana": "め",
+                    "Romaji": "me"
+                },
+                "o": {
+                    "order": 4,
+                    "file": "akiNoises/mo.mp3",
+                    "Katakana": "モ",
+                    "Hiragana": "も",
+                    "Romaji": "mo"
+                }
+            }
+        },
+        {
+            "order": 12,
+            "rowConsonant": "y",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/ya.mp3",
+                    "Katakana": "ヤ",
+                    "Hiragana": "や",
+                    "Romaji": "ya"
+                },
+                "u": {
+                    "order": 2,
+                    "file": "akiNoises/yu.mp3",
+                    "Katakana": "ユ",
+                    "Hiragana": "ゆ",
+                    "Romaji": "yu"
+                },
+                "o": {
+                    "order": 4,
+                    "file": "akiNoises/yo.mp3",
+                    "Katakana": "ヨ",
+                    "Hiragana": "よ",
+                    "Romaji": "yo"
+                }
+            }
+        },
+        {
+            "order": 13,
+            "rowConsonant": "r",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/ra.mp3",
+                    "Katakana": "ラ",
+                    "Hiragana": "ら",
+                    "Romaji": "ra"
+                },
+                "i": {
+                    "order": 1,
+                    "file": "akiNoises/ri.mp3",
+                    "Katakana": "リ",
+                    "Hiragana": "り",
+                    "Romaji": "ri"
+                },
+                "u": {
+                    "order": 2,
+                    "file": "akiNoises/ru.mp3",
+                    "Katakana": "ル",
+                    "Hiragana": "る",
+                    "Romaji": "ru"
+                },
+                "e": {
+                    "order": 3,
+                    "file": "akiNoises/re.mp3",
+                    "Katakana": "レ",
+                    "Hiragana": "れ",
+                    "Romaji": "re"
+                },
+                "o": {
+                    "order": 4,
+                    "file": "akiNoises/ro.mp3",
+                    "Katakana": "ロ",
+                    "Hiragana": "ろ",
+                    "Romaji": "ro"
+                }
+            }
+        },
+        {
+            "order": 14,
+            "rowConsonant": "w",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/wa.mp3",
+                    "Katakana": "ワ",
+                    "Hiragana": "わ",
+                    "Romaji": "wa"
+                },
+                "o": {
+                    "order": 4,
+                    "file": "akiNoises/wo.mp3",
+                    "Katakana": "ヲ",
+                    "Hiragana": "を",
+                    "Romaji": "wo"
+                }
+            }
+        },
+        {
+            "order": 15,
+            "rowConsonant": "*",
+            "columns": {
+                "a": {
+                    "order": 0,
+                    "file": "akiNoises/n.mp3",
+                    "Katakana": "ン",
+                    "Hiragana": "ん",
+                    "Romaji": "n"
+                }
+            }
+        }
+    ]
+}
