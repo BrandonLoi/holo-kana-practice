@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <b-container class="text-left">
+    <b-container class="text-left content">
       <b-row>
         <p>
           The Japanese writing system uses a combination of Kanji and Kana.

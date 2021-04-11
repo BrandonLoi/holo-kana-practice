@@ -1,6 +1,6 @@
 <template>
   <div class="quiz">
-    <b-container v-if="!quizDisplay">
+    <b-container class="content" v-if="!quizDisplay">
       <Options @setOptions="setOptions" />
       <b-row>
         <b-col />
@@ -12,7 +12,7 @@
         <b-col />
       </b-row>
     </b-container>
-    <b-container v-else>
+    <b-container class="content" v-else>
       <QuizArea @returnToOptions="endQuiz" :options="options" />
     </b-container>
   </div>

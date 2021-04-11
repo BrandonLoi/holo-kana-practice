@@ -1,14 +1,24 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">About</router-link> |
-      <router-link to="/study">Study</router-link> |
-      <router-link to="/quiz">Quiz</router-link>
-    </div>
-    <transition name="fade">
-      <router-view />
-    </transition>
-  </div>
+  <b-container fluid id="app">
+    <br />
+    <b-row>
+      <b-col />
+      <b-col id="nav" class="content">
+        <router-link to="/">About</router-link> |
+        <router-link to="/study">Study</router-link> |
+        <router-link to="/quiz">Quiz</router-link>
+      </b-col>
+      <b-col />
+    </b-row>
+    <br />
+    <b-row>
+      <b-col>
+        <transition name="fade">
+          <router-view />
+        </transition>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <style>
@@ -39,5 +49,9 @@
 
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+
+.content {
+  background-color: rgba(255, 228, 196, 0.85);
 }
 </style>

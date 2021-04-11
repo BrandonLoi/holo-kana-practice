@@ -1,5 +1,6 @@
 <template>
   <div class="quizArea">
+    <br />
     <b-btn variant="danger" @click="endGame">End Quiz</b-btn>
     <div v-if="gameState != 'ended'" id="questionUI">
       <br />
@@ -86,6 +87,9 @@
             <b-btn variant="secondary" @click="returnToOptions">Options</b-btn>
           </b-col>
         </b-row>
+        <br />
+        <br />
+        <br />
       </b-container>
     </div>
   </div>

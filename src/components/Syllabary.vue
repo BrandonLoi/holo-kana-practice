@@ -1,60 +1,61 @@
 <template>
-  <b-container>
+  <div id="syllabaryContainer">
     <br />
     <br />
-
-    <b-row class="text-center">
-      <b-col style="border: 1px blue solid" cols="2" />
-      <b-col
-        v-for="v in vowelArray"
-        style="border: 1px blue solid"
-        :key="v"
-        cols="2"
-      >
-        <h4>{{ v }}</h4>
-      </b-col>
-    </b-row>
-
-    <b-row
-      style="border: 1px solid blue"
-      v-for="i in syllabaries"
-      :key="i.order"
-    >
-      <b-col
-        class="text-center my-auto"
-        style="border-right: 1px blue solid"
-        align-v="center"
-        cols="2"
-      >
-        <h2>{{ i.rowConsonant }}</h2>
-      </b-col>
-      <b-col
-        class="text-center my-auto"
-        style="border-left: 1px blue solid; border-right: 1px blue solid"
-        cols="2"
-        v-for="v in vowelArray"
-        :key="v"
-      >
-        <div></div>
-        <b-btn
-          block
-          pill
-          @click="playSound(i.columns[v].file)"
-          variant="primary"
-          size="lg"
-          v-if="i.columns[v]"
+    <b-container class="content">
+      <b-row class="text-center">
+        <b-col style="border: 1px blue solid" cols="2" />
+        <b-col
+          v-for="v in vowelArray"
+          style="border: 1px blue solid"
+          :key="v"
+          cols="2"
         >
-          {{ i.columns[v][kana] }}
-        </b-btn>
-      </b-col>
-      <br />
-      <br />
-      <br />
-    </b-row>
+          <h2>{{ v }}</h2>
+        </b-col>
+      </b-row>
+
+      <b-row
+        style="border: 1px solid blue"
+        v-for="i in syllabaries"
+        :key="i.order"
+      >
+        <b-col
+          class="text-center my-auto"
+          style="border-right: 1px blue solid"
+          align-v="center"
+          cols="2"
+        >
+          <h2>{{ i.rowConsonant }}</h2>
+        </b-col>
+        <b-col
+          class="text-center my-auto"
+          style="border-left: 1px blue solid; border-right: 1px blue solid"
+          cols="2"
+          v-for="v in vowelArray"
+          :key="v"
+        >
+          <div></div>
+          <b-btn
+            block
+            pill
+            @click="playSound(i.columns[v].file)"
+            variant="primary"
+            size="lg"
+            v-if="i.columns[v]"
+          >
+            {{ i.columns[v][kana] }}
+          </b-btn>
+        </b-col>
+        <br />
+        <br />
+        <br />
+      </b-row>
+    </b-container>
     <br />
     <br />
     <br />
-  </b-container>
+  </div>
 </template>
 
 <script>
@@ -82,4 +83,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+body {
+  background-image: url("~@/assets/bg1.png");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+</style>
