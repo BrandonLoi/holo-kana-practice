@@ -12,7 +12,7 @@
           Kana is made of 2 character sets: <br />
           <ul>
             <li>
-              <strong>Hiragana</strong>: native Japanese words and gramatic
+              <strong>Hiragana</strong>: native Japanese words and grammatical
               structure
             </li>
             <li>
