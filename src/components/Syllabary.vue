@@ -3,44 +3,36 @@
     <br />
     <br />
     <b-container class="content">
-      <b-row class="text-center">
-        <b-col style="border: 1px blue solid" cols="2" />
+        <b-col style="border-right: 1px blue solid" cols="2" />
         <b-col
-          v-for="v in vowelArray"
-          style="border: 1px blue solid"
+          class="d-flex"
+          v-for="(v, index) in vowelArray"
           :key="v"
+          v-bind:class="[
+            index == vowelArray.length - 1 ? lastItemClass : itemColClass
+          ]"
           cols="2"
         >
-          <h2>{{ v }}</h2>
+          <h2 class="col-header-margin">{{ v }}</h2>
         </b-col>
       </b-row>
-
       <b-row
         style="border: 1px solid blue"
         v-for="i in syllabaries"
         :key="i.order"
       >
-        <b-col
-          class="text-center my-auto"
-          style="border-right: 1px blue solid"
-          align-v="center"
-          cols="2"
-        >
-          <h2>{{ i.rowConsonant }}</h2>
+        <b-col class="d-flex" style="border-right: 1px blue solid" cols="2">
+          <h2 style="margin: auto">{{ i.rowConsonant }}</h2>
         </b-col>
         <b-col
-          class="text-center my-auto"
-          style="border-left: 1px blue solid; border-right: 1px blue solid"
           cols="2"
-          v-for="v in vowelArray"
+          v-for="(v, index) in vowelArray"
           :key="v"
+          v-bind:class="[
+            index == vowelArray.length - 1 ? lastItemClass : itemColClass
+          ]"
         >
-          <div></div>
-          <div
-            class="d-inline-flex"
-            @click="playSound(i.columns[v].file)"
-            v-if="i.columns[v]"
-          >
+          <div @click="playSound(i.columns[v].file)" v-if="i.columns[v]">
             <span
               class="position-absolute text-white"
               style="         
@@ -75,7 +67,9 @@ export default {
     return {
       syllabaries: json.Gojūon,
       audioSrc: "",
-      vowelArray: ["a", "i", "u", "e", "o"]
+      vowelArray: ["a", "i", "u", "e", "o"],
+      itemColClass: "item-col",
+      lastItemClass: "last-item"
     };
   },
   methods: {
@@ -95,5 +89,16 @@ body {
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
+}
+.col-header-margin {
+  margin: auto;
+  margin-bottom: 5px;
+}
+.item-col {
+  border-left: 1px blue solid;
+  border-right: 1px blue solid;
+}
+.last-item {
+  border-left: 1px blue solid;
 }
 </style>
