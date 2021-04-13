@@ -36,16 +36,22 @@
           :key="v"
         >
           <div></div>
-          <b-btn
-            block
-            pill
+          <div
+            class="d-inline-flex"
             @click="playSound(i.columns[v].file)"
-            variant="primary"
-            size="lg"
             v-if="i.columns[v]"
           >
-            {{ i.columns[v][kana] }}
-          </b-btn>
+            <span
+              class="position-absolute text-white"
+              style="         
+                    font-size: 1.25rem;
+                    top: 59%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);"
+              >{{ i.columns[v][kana] }}</span
+            >
+            <img src="..\assets\appleBtnSmall.png" />
+          </div>
         </b-col>
         <br />
         <br />
