@@ -3,6 +3,7 @@
     <br />
     <br />
     <b-container class="content">
+      <b-row style="border: 1px solid blue">
         <b-col style="border-right: 1px blue solid" cols="2" />
         <b-col
           class="d-flex"
