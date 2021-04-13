@@ -91,5 +91,12 @@ body {
   background-size: cover; /* Resize the background image to cover the entire container */
   background-attachment: fixed;
 }
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
 }
 </style>
