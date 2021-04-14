@@ -3,7 +3,7 @@
     <br />
     <br />
     <b-container class="content">
-      <b-row style="border: 1px solid blue">
+      <b-row no-gutters style="border: 1px solid blue">
         <b-col style="border-right: 1px blue solid" cols="2" />
         <b-col
           class="d-flex"
@@ -18,9 +18,11 @@
         </b-col>
       </b-row>
       <b-row
+        no-gutters
         style="border: 1px solid blue"
         v-for="i in syllabaries"
         :key="i.order"
+        class="clickable"
       >
         <b-col class="d-flex" style="border-right: 1px blue solid" cols="2">
           <h2 style="margin: auto">{{ i.rowConsonant }}</h2>
@@ -32,8 +34,10 @@
           v-bind:class="[
             index == vowelArray.length - 1 ? lastItemClass : itemColClass
           ]"
+          align-v="center"
         >
-          <div @click="playSound(i.columns[v].file)" v-if="i.columns[v]">
+          <div v-if="i.columns[v]" @click="playSound(i.columns[v].file)">
+            <b-img fluid :src="require('@/assets/appleBtn.png')" />
             <span
               class="position-absolute text-white"
               style="         
@@ -43,7 +47,6 @@
                     transform: translate(-50%, -50%);"
               >{{ i.columns[v][kana] }}</span
             >
-            <img src="..\assets\appleBtnSmall.png" />
           </div>
         </b-col>
         <br />
@@ -101,5 +104,8 @@ body {
 }
 .last-item {
   border-left: 1px blue solid;
+}
+.clickable {
+  cursor: pointer;
 }
 </style>

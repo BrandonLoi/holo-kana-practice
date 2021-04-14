@@ -4,8 +4,10 @@
     <b-row>
       <b-col />
       <b-col id="nav" class="content">
-        <router-link to="/">About</router-link> |
-        <router-link to="/study">Study</router-link> |
+        <router-link to="/">About</router-link>
+        &nbsp;
+        <router-link to="/study">Study</router-link>
+        &nbsp;
         <router-link to="/quiz">Quiz</router-link>
       </b-col>
       <b-col />
