@@ -1,11 +1,29 @@
 <template>
   <div class="question">
     <b-row>
+      <b-col />
       <b-col>
-        <h1>{{ question.answer[question.displayType] }}</h1>
+        <h1 v-if="question.displayType != 'Sound'">
+          {{ question.answer[question.displayType] }}
+        </h1>
+        <div v-else>
+          <div class="clickable" @click="playPromptSound()">
+            <b-img fluid :src="require('@/assets/appleBtn.png')" />
+            <span
+              class="position-absolute text-white"
+              style="         
+                    font-size: 1.25rem;
+                    top: 59%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);"
+              >▶</span
+            >
+          </div>
+        </div>
       </b-col>
+      <b-col />
     </b-row>
-
+    <br />
     <b-row>
       <b-col>
         <b-container>
@@ -28,19 +46,6 @@
             <br />
           </b-row>
         </b-container>
-
-        <!-- Type Response -->
-        <!-- <b-container>
-          <b-row>
-            <b-col>
-              <b-form-textarea
-                id="textarea-large"
-                size="lg"
-                placeholder="Enter a response..."
-              />
-            </b-col>
-          </b-row>
-        </b-container> -->
       </b-col>
     </b-row>
   </div>
@@ -108,6 +113,12 @@ export default {
       if (i === this.answerIndex) {
         return "success";
       }
+    },
+    playPromptSound() {
+      /* eslint-disable global-require */
+      const audio = new Audio(require("@/assets/" + this.question.answer.file));
+      audio.play();
+      /* eslint-enable global-require */
     }
   },
   watch: {
@@ -118,4 +129,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.clickable {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+</style>

@@ -142,20 +142,28 @@ export default {
     displayNextQuestion() {
       this.displayFooter = false;
       this.currentAnswerCorrect = false;
-      //select a random category from option.questionContent
-      const content = this.options.questionContent[
-        Math.floor(Math.random() * this.options.questionContent.length)
-      ];
-      switch (content) {
-        case "Symbol": {
-          this.getRandomSymbol();
-          this.currentQuestion = this.buildSymbolQuestion();
-          break;
-        }
-        default: {
-          break;
-        }
-      }
+      this.currentQuestion = this.buildSymbolQuestion();
+      // if different kinds of questions are added with:
+      //   -prompt types (words, sentences)
+      //   -answer formats (typing, click/drag)
+      // organize them in this switch statement
+      // const content = this.options.questionContent[
+      //   Math.floor(Math.random() * this.options.questionContent.length)
+      // ];
+      // switch (content) {
+      //   case "Symbol": {
+      //     this.currentQuestion = this.buildSymbolQuestion();
+      //     break;
+      //   }
+      //   case "Sound": {
+      //     this.currentQuestion = this.buildSymbolQuestion();
+      //     break;
+      //   }
+      //   default: {
+      //     console.log("unhandled case!");
+      //     break;
+      //   }
+      // }
     },
     startTimer() {
       this.clearTimer();

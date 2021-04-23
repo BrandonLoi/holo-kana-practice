@@ -22,7 +22,6 @@
         style="border: 1px solid blue"
         v-for="i in syllabaries"
         :key="i.order"
-        class="clickable"
       >
         <b-col class="d-flex" style="border-right: 1px blue solid" cols="2">
           <h2 style="margin: auto">{{ i.rowConsonant }}</h2>
@@ -36,7 +35,11 @@
           ]"
           align-v="center"
         >
-          <div v-if="i.columns[v]" @click="playSound(i.columns[v].file)">
+          <div
+            v-if="i.columns[v]"
+            @click="playSound(i.columns[v].file)"
+            class="clickable"
+          >
             <b-img fluid :src="require('@/assets/appleBtn.png')" />
             <span
               class="position-absolute text-white"
@@ -88,13 +91,6 @@ export default {
 </script>
 
 <style>
-body {
-  background-image: url("~@/assets/bg1.png");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-  background-attachment: fixed;
-}
 ::-webkit-scrollbar {
   width: 0; /* Remove scrollbar space */
   background: transparent; /* Optional: just make scrollbar invisible */
@@ -116,5 +112,9 @@ body {
 }
 .clickable {
   cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 </style>

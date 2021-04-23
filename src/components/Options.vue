@@ -190,7 +190,7 @@ export default {
       contentSelect: ["Symbol"],
 
       //question display
-      displayOptions: ["Romaji", "Hiragana", "Katakana"],
+      displayOptions: ["Romaji", "Hiragana", "Katakana", "Sound"],
       displaySelect: ["Hiragana"],
 
       //time mode selection

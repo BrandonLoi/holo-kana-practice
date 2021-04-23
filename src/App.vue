@@ -56,4 +56,12 @@
 .content {
   background-color: rgba(255, 228, 196, 0.85);
 }
+
+body {
+  background-image: url("~@/assets/bg1.png");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-attachment: fixed;
+}
 </style>
