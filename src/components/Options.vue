@@ -1,5 +1,6 @@
 <template>
   <div class="options">
+    <br />
     <b-container>
       <b-row>
         <b-col />

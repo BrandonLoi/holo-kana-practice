@@ -8,6 +8,8 @@
           <b-btn @click="beginQuiz" variant="success" size="lg">
             Start Quiz
           </b-btn>
+          <br />
+          <br />
         </b-col>
         <b-col />
       </b-row>

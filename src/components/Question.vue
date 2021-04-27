@@ -7,7 +7,7 @@
           {{ question.answer[question.displayType] }}
         </h1>
         <div v-else>
-          <div class="clickable" @click="playPromptSound()">
+          <div class="clickable" @click="playSound(question.answer.file)">
             <b-img fluid :src="require('@/assets/appleBtn.png')" />
             <span
               class="position-absolute text-white"
@@ -31,10 +31,14 @@
             <b-col v-for="col in 2" :key="col">
               <b-btn
                 v-if="choiceArray[2 * row + col - 3]"
-                @click="answer(2 * row + col - 3)"
+                @click="selectAnswer(2 * row + col - 3)"
                 block
                 pill
-                :variant="getButtonVariant(2 * row + col - 3)"
+                :variant="
+                  selectedAnswer == 2 * row + col - 3 && !disabledState
+                    ? 'primary'
+                    : getButtonVariant(2 * row + col - 3)
+                "
                 :disabled="disabledState"
                 size="lg"
               >
@@ -44,6 +48,26 @@
             <br />
             <br />
             <br />
+          </b-row>
+          <b-row
+            :style="
+              selectedAnswer != undefined && !disabledState
+                ? 'visibility: visible'
+                : 'visibility: hidden'
+            "
+          >
+            <b-col />
+            <b-col cols="3">
+              <b-btn
+                block
+                pill
+                @click="confirmAnswer()"
+                variant="primary"
+                size="lg"
+                >Check</b-btn
+              >
+            </b-col>
+            <b-col />
           </b-row>
         </b-container>
       </b-col>
@@ -89,21 +113,25 @@ export default {
   data() {
     return {
       answerIndex: undefined,
-      disabledState: false
+      disabledState: false,
+      selectedAnswer: undefined
     };
   },
   methods: {
-    answer(i) {
-      this.$emit("answerQuestion", i === this.answerIndex);
-      this.disabledState = true;
-
-      //todo: highlight correct
+    selectAnswer(i) {
+      this.selectedAnswer = i;
+      if (this.question.displayType != "Sound") {
+        this.playSound(this.choiceArray[i].file);
+      }
     },
     setAnswerIndex() {
       const x = Math.floor(Math.random() * (this.question.choices.length + 1));
       this.answerIndex = x;
     },
     getButtonVariant(i) {
+      if (this.selectedAnswer == i && !this.disabledState) {
+        return "primary";
+      }
       if (this.disabledState === false) {
         return "outline-primary";
       }
@@ -114,11 +142,16 @@ export default {
         return "success";
       }
     },
-    playPromptSound() {
+    playSound(sound) {
       /* eslint-disable global-require */
-      const audio = new Audio(require("@/assets/" + this.question.answer.file));
+      const audio = new Audio(require("@/assets/" + sound));
       audio.play();
       /* eslint-enable global-require */
+    },
+    confirmAnswer() {
+      this.$emit("answerQuestion", this.selectedAnswer === this.answerIndex);
+      this.disabledState = true;
+      this.selectedAnswer = undefined;
     }
   },
   watch: {

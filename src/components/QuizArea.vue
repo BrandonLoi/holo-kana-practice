@@ -1,7 +1,9 @@
 <template>
   <div class="quizArea">
     <br />
-    <b-btn variant="danger" @click="endGame">End Quiz</b-btn>
+    <b-btn v-if="gameState != 'ended'" variant="danger" @click="endGame"
+      >End Quiz</b-btn
+    >
     <div v-if="gameState != 'ended'" id="questionUI">
       <br />
       <b-container>
@@ -25,7 +27,7 @@
           <b-col>
             <b-alert
               :variant="currentAnswerCorrect ? 'success' : 'danger'"
-              v-model="displayFooter"
+              v-model="displayAnswerRow"
             >
               <h5>{{ currentAnswerCorrect ? "Correct!" : "Incorrect" }}</h5>
               <p style="font-weight: bold">
@@ -81,10 +83,15 @@
             <h3>{{ questionsAnsweredCorrectly }} / {{ questionsAnswered }}</h3>
           </b-col>
         </b-row>
+        <br />
+        <br />
+        <br />
 
         <b-row>
           <b-col>
-            <b-btn variant="secondary" @click="returnToOptions">Options</b-btn>
+            <b-btn variant="info" @click="returnToOptions" size="lg"
+              >Options</b-btn
+            >
           </b-col>
         </b-row>
         <br />
@@ -123,7 +130,8 @@ export default {
       gameState: "ended",
       currentQuestion: undefined,
       currentAnswerCorrect: false,
-      displayFooter: false
+      displayAnswerRow: false,
+      answerSelected: false
     };
   },
   mounted() {
@@ -140,7 +148,7 @@ export default {
       this.gameState = "ended";
     },
     displayNextQuestion() {
-      this.displayFooter = false;
+      this.displayAnswerRow = false;
       this.currentAnswerCorrect = false;
       this.currentQuestion = this.buildSymbolQuestion();
       // if different kinds of questions are added with:
@@ -268,7 +276,7 @@ export default {
       ) {
         this.endGame();
       } else {
-        this.displayFooter = true;
+        this.displayAnswerRow = true;
       }
     },
     playSound(sound) {
