@@ -1,6 +1,6 @@
 <template>
   <div class="question">
-    <b-row>
+    <b-row style="min-height: 90px; max-height: 90px">
       <b-col />
       <b-col>
         <h1 v-if="question.promptDisplay != 'file'">

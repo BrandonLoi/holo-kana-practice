@@ -23,16 +23,10 @@
           @answerQuestion="answerQuestion"
         />
         <!-- Correct/Incorrect Alert -->
-        <b-row style="min-height: 80px">
+        <b-row style="min-height: 120px">
           <b-col>
-            <b-alert
-              :variant="currentAnswerCorrect ? 'success' : 'danger'"
-              v-model="displayAnswerRow"
-            >
+            <div v-if="displayAnswerRow" class="p-3" :style="footerStyle">
               <h5>{{ currentAnswerCorrect ? "Correct!" : "Incorrect" }}</h5>
-              <p style="font-weight: bold">
-                {{ currentQuestion.answer[currentQuestion.displayType] }}
-              </p>
               <b-btn
                 @click="displayNextQuestion"
                 block
@@ -43,9 +37,10 @@
                 Next Question
                 <b-icon icon="arrow-right" />
               </b-btn>
-            </b-alert>
+            </div>
           </b-col>
         </b-row>
+        <br />
       </b-container>
     </div>
     <div v-else id="resultsUI">
@@ -115,8 +110,11 @@ export default {
     options: Object
   },
   computed: {
-    footerVariant() {
-      return this.currentAnswerCorrect ? "success" : "danger";
+    footerStyle() {
+      return {
+        visibility: this.displayAnswerRow ? "visible" : "hidden",
+        backgroundColor: this.currentAnswerCorrect ? "#d4edda" : "#f8d7da"
+      };
     },
     symbolOptions() {
       return [...this.options.kanaSelect, "Romaji"];

@@ -20,27 +20,15 @@
       <br />
     </b-container>
     <div v-else>
-      <!-- small screen UI -->
-      <b-container class="d-xl-none" fluid>
+      <b-container fluid>
         <b-row>
+          <b-col cols="1" class="d-none d-lg-block" />
           <b-col>
             <b-container class="content">
               <QuizArea @returnToOptions="endQuiz" :options="options" />
             </b-container>
           </b-col>
-        </b-row>
-      </b-container>
-
-      <!-- large screen UI -->
-      <b-container class="d-none d-xl-block" fluid>
-        <b-row>
-          <b-col cols="1" class="d-none d-lg-block" />
-          <b-col cols="6">
-            <b-container class="content">
-              <QuizArea @returnToOptions="endQuiz" :options="options" />
-            </b-container>
-          </b-col>
-          <b-col align-self="center">
+          <b-col cols="5" class="d-none d-xl-block" align-self="center">
             <b-img fluid :src="require('@/assets/akiPoses/point1.png')" />
           </b-col>
         </b-row>
