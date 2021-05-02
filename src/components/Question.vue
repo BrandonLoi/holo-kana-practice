@@ -3,8 +3,8 @@
     <b-row>
       <b-col />
       <b-col>
-        <h1 v-if="question.displayType != 'Sound'">
-          {{ question.answer[question.displayType] }}
+        <h1 v-if="question.promptDisplay != 'file'">
+          {{ question.answer[question.promptDisplay] }}
         </h1>
         <div v-else>
           <div class="clickable" @click="playSound(question.answer.file)">
@@ -29,21 +29,39 @@
         <b-container>
           <b-row v-for="row in rowNum" :key="row">
             <b-col v-for="col in 2" :key="col">
-              <b-btn
-                v-if="choiceArray[2 * row + col - 3]"
-                @click="selectAnswer(2 * row + col - 3)"
-                block
-                pill
-                :variant="
-                  selectedAnswer == 2 * row + col - 3 && !disabledState
-                    ? 'primary'
-                    : getButtonVariant(2 * row + col - 3)
-                "
-                :disabled="disabledState"
-                size="lg"
-              >
-                {{ choiceArray[2 * row + col - 3][answerDisplay] }}
-              </b-btn>
+              <div v-if="question.answerDisplay == 'file'">
+                <b-btn
+                  v-if="choiceArray[2 * row + col - 3]"
+                  @click="selectAnswer(2 * row + col - 3)"
+                  block
+                  pill
+                  :variant="
+                    selectedAnswer == 2 * row + col - 3 && !disabledState
+                      ? 'primary'
+                      : getButtonVariant(2 * row + col - 3)
+                  "
+                  :disabled="disabledState"
+                  size="lg"
+                  >▶</b-btn
+                >
+              </div>
+              <div v-else>
+                <b-btn
+                  v-if="choiceArray[2 * row + col - 3]"
+                  @click="selectAnswer(2 * row + col - 3)"
+                  block
+                  pill
+                  :variant="
+                    selectedAnswer == 2 * row + col - 3 && !disabledState
+                      ? 'primary'
+                      : getButtonVariant(2 * row + col - 3)
+                  "
+                  :disabled="disabledState"
+                  size="lg"
+                >
+                  {{ choiceArray[2 * row + col - 3][question.answerDisplay] }}
+                </b-btn>
+              </div>
             </b-col>
             <br />
             <br />
@@ -94,20 +112,6 @@ export default {
       this.setAnswerIndex();
       arr.splice(this.answerIndex, 0, this.question.answer);
       return arr;
-    },
-    answerDisplay() {
-      switch (this.question.answerType) {
-        case "Multichoice Romaji":
-          return "Romaji";
-        case "Multichoice Hiragana": {
-          return "Hiragana";
-        }
-        case "Multichoice Katakana": {
-          return "Katakana";
-        }
-        default:
-          return "";
-      }
     }
   },
   data() {
@@ -120,7 +124,7 @@ export default {
   methods: {
     selectAnswer(i) {
       this.selectedAnswer = i;
-      if (this.question.displayType != "Sound") {
+      if (this.question.promptDisplay != "file") {
         this.playSound(this.choiceArray[i].file);
       }
     },

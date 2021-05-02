@@ -3,48 +3,21 @@
     <br />
     <b-container>
       <b-row>
-        <b-col />
-        <b-col class="text-right">Question Options:</b-col>
-        <b-col class="text-left">
-          <b-form-checkbox-group
-            v-model="contentSelect"
-            :options="contentOptions"
-            size="lg"
-            stacked
-          />
+        <b-col>
+          <b-form-group>
+            <b-form-checkbox-group
+              v-model="kanaSelect"
+              :options="kanaOptions"
+              size="lg"
+              stacked
+              switches
+            />
+          </b-form-group>
         </b-col>
-        <b-col />
       </b-row>
-      <br />
-      <b-row>
-        <b-col />
-        <b-col class="text-right">Question Display:</b-col>
-        <b-col class="text-left">
-          <b-form-checkbox-group
-            v-model="displaySelect"
-            :options="displayOptions"
-            size="lg"
-            stacked
-          />
-        </b-col>
-        <b-col />
-      </b-row>
+
       <br />
 
-      <b-row>
-        <b-col />
-        <b-col class="text-right">Answer Types:</b-col>
-        <b-col class="text-left">
-          <b-form-checkbox-group
-            v-model="typeSelect"
-            :options="typeOptions"
-            size="lg"
-            stacked
-          />
-        </b-col>
-        <b-col />
-      </b-row>
-      <br />
       <b-row>
         <b-col />
         <b-col class="text-center">
@@ -68,7 +41,7 @@
                   type="number"
                   min="1"
                   :max="numberOfQuestionsMax"
-                />{{ numberOfQuestionsValue }} question(s)
+                />question(s)
               </b-col>
             </b-row>
           </div>
@@ -81,10 +54,12 @@
                   type="number"
                   :min="overallTimeMin"
                   :max="overallTimeMax"
-                />{{ overallTimeValue }} minute(s)
+                />minute(s)
               </b-col>
             </b-row>
+
             <br />
+
             <b-row>
               <b-col class="my-auto text-right">Question:</b-col>
               <b-col>
@@ -93,7 +68,7 @@
                   type="number"
                   :min="questionTimeMin"
                   :max="questionTimeMax"
-                />{{ questionTimeValue }} second(s)
+                />second(s)
               </b-col>
             </b-row>
           </div>
@@ -106,15 +81,16 @@
                   type="number"
                   :min="mistakeLimitMin"
                   :max="mistakeLimitMax"
-                />{{ mistakeLimitValue }} mistake(s)
+                />mistake(s)
               </b-col>
             </b-row>
           </div>
         </b-col>
         <b-col />
       </b-row>
-      <br />
     </b-container>
+
+    <br />
   </div>
 </template>
 
@@ -124,9 +100,7 @@ export default {
   computed: {
     selectedOptions() {
       return {
-        answerTypes: this.typeSelect,
-        questionDisplay: this.displaySelect,
-        questionContent: this.contentSelect,
+        kanaSelect: this.kanaSelect,
         timeOption: this.timeSelect,
         numberOfQuestions: this.numberOfQuestionsValue,
         overallTime: this.overallTimeValue,
@@ -169,30 +143,9 @@ export default {
   },
   data() {
     return {
-      //answer type
-      typeOptions: [
-        "Multichoice Romaji",
-        "Multichoice Hiragana",
-        "Multichoice Katakana"
-      ],
-      // typeOptions: [
-      //   "Multichoice Romaji",
-      //   "Multichoice Hiragana",
-      //   "Multichoice Katakana",
-      //   "Type Romaji",
-      //   "Type Hiragana",
-      //   "Type Katakana"
-      // ],
-      typeSelect: ["Multichoice Romaji"],
-
-      //question content
-      contentOptions: ["Symbol"],
-      // contentOptions: ["Symbol", "Vocab", "Listen"],
-      contentSelect: ["Symbol"],
-
-      //question display
-      displayOptions: ["Romaji", "Hiragana", "Katakana", "Sound"],
-      displaySelect: ["Hiragana"],
+      //new easy toggles
+      kanaSelect: ["Hiragana", "Katakana"],
+      kanaOptions: ["Hiragana", "Katakana"],
 
       //time mode selection
       timeOptions: ["#", "Timed", "Unlimited"],

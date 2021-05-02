@@ -117,6 +117,9 @@ export default {
   computed: {
     footerVariant() {
       return this.currentAnswerCorrect ? "success" : "danger";
+    },
+    symbolOptions() {
+      return [...this.options.kanaSelect, "Romaji"];
     }
   },
   data() {
@@ -131,7 +134,10 @@ export default {
       currentQuestion: undefined,
       currentAnswerCorrect: false,
       displayAnswerRow: false,
-      answerSelected: false
+      answerSelected: false,
+
+      //new options
+      promptTypes: ["Symbol", "Audio"]
     };
   },
   mounted() {
@@ -150,28 +156,7 @@ export default {
     displayNextQuestion() {
       this.displayAnswerRow = false;
       this.currentAnswerCorrect = false;
-      this.currentQuestion = this.buildSymbolQuestion();
-      // if different kinds of questions are added with:
-      //   -prompt types (words, sentences)
-      //   -answer formats (typing, click/drag)
-      // organize them in this switch statement
-      // const content = this.options.questionContent[
-      //   Math.floor(Math.random() * this.options.questionContent.length)
-      // ];
-      // switch (content) {
-      //   case "Symbol": {
-      //     this.currentQuestion = this.buildSymbolQuestion();
-      //     break;
-      //   }
-      //   case "Sound": {
-      //     this.currentQuestion = this.buildSymbolQuestion();
-      //     break;
-      //   }
-      //   default: {
-      //     console.log("unhandled case!");
-      //     break;
-      //   }
-      // }
+      this.currentQuestion = this.buildQuestion();
     },
     startTimer() {
       this.clearTimer();
@@ -224,14 +209,8 @@ export default {
       const syllable = row[Math.floor(Math.random() * row.length)];
       return syllable[1];
     },
-    buildSymbolQuestion() {
+    buildQuestion() {
       const q = {};
-      q.displayType = this.options.questionDisplay[
-        Math.floor(Math.random() * this.options.questionDisplay.length)
-      ];
-      q.answerType = this.options.answerTypes[
-        Math.floor(Math.random() * this.options.answerTypes.length)
-      ];
       q.answer = this.getRandomSymbol();
       let choices = [];
       while (choices.length < 3) {
@@ -244,6 +223,48 @@ export default {
         }
       }
       q.choices = choices;
+
+      const promptType = this.promptTypes[
+        Math.floor(Math.random() * this.promptTypes.length)
+      ];
+      switch (promptType) {
+        case "Symbol": {
+          const answerType = this.promptTypes[
+            Math.floor(Math.random() * this.promptTypes.length)
+          ];
+          if (answerType == "Audio") {
+            q.promptDisplay = this.symbolOptions[
+              Math.floor(Math.random() * this.symbolOptions.length)
+            ];
+            q.answerDisplay = "file";
+          } else {
+            //ensure prompt/answer is displayed with different symbols
+            const tempArr = [...this.symbolOptions];
+            const promptSymbolOptionIndex = Math.floor(
+              Math.random() * tempArr.length
+            );
+            const promptSymbol = tempArr[promptSymbolOptionIndex];
+            tempArr.splice(promptSymbolOptionIndex, 1);
+            const answerSymbol =
+              tempArr[Math.floor(Math.random() * tempArr.length)];
+            q.promptDisplay = promptSymbol;
+            q.answerDisplay = answerSymbol;
+          }
+          break;
+        }
+        case "Audio": {
+          //answerDisplay must be a symbol
+          const answerSymbol = this.symbolOptions[
+            Math.floor(Math.random() * this.symbolOptions.length)
+          ];
+          q.promptDisplay = "file";
+          q.answerDisplay = answerSymbol;
+          break;
+        }
+        default: {
+          console.error(`Unhandled prompt type: ${q.promptDi}`);
+        }
+      }
       return q;
     },
     answerQuestion(a) {

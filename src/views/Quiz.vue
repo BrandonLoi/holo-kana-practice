@@ -8,11 +8,16 @@
           <b-btn @click="beginQuiz" variant="success" size="lg">
             Start Quiz
           </b-btn>
-          <br />
-          <br />
+        </b-col>
+        <b-col v-else>
+          <b-btn variant="secondary" size="lg"
+            >Choose a kana set to begin</b-btn
+          >
         </b-col>
         <b-col />
       </b-row>
+      <br />
+      <br />
     </b-container>
     <b-container class="content" v-else>
       <QuizArea @returnToOptions="endQuiz" :options="options" />
@@ -31,12 +36,7 @@ export default {
   },
   computed: {
     settingsValid() {
-      if (
-        this.options.answerTypes &&
-        this.options.answerTypes.length &&
-        this.options.questionContent &&
-        this.options.questionContent.length
-      ) {
+      if (this.options.kanaSelect && this.options.kanaSelect.length) {
         return true;
       }
       return false;
