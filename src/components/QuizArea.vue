@@ -153,7 +153,7 @@ export default {
     },
     displayNextQuestion() {
       this.displayAnswerRow = false;
-      this.currentAnswerCorrect = false;
+      this.currentAnswerCorrect = undefined;
       this.currentQuestion = this.buildQuestion();
     },
     startTimer() {
@@ -315,6 +315,23 @@ export default {
       if (this.options.timeOption == "Timed" && val <= 0) {
         this.endGame();
       }
+    },
+    currentAnswerCorrect(val) {
+        // if (this.gameState === "ended") {
+        //   //todo: make this better
+        // }
+        switch(val) {
+          case true:
+            this.$emit("setState", "correct")
+            break;
+          case false:
+            this.$emit("setState", "incorrect")
+            break;
+          case undefined:
+            this.$emit("setState", "prompt")
+            break;
+        }
+
     }
   }
 };
