@@ -317,21 +317,20 @@ export default {
       }
     },
     currentAnswerCorrect(val) {
-        // if (this.gameState === "ended") {
-        //   //todo: make this better
-        // }
-        switch(val) {
-          case true:
-            this.$emit("setState", "correct")
-            break;
-          case false:
-            this.$emit("setState", "incorrect")
-            break;
-          case undefined:
-            this.$emit("setState", "prompt")
-            break;
-        }
-
+      // if (this.gameState === "ended") {
+      //   //todo: make this better
+      // }
+      switch (val) {
+        case true:
+          this.$emit("setState", "correct");
+          break;
+        case false:
+          this.$emit("setState", "incorrect");
+          break;
+        case undefined:
+          this.$emit("setState", "prompt");
+          break;
+      }
     }
   }
 };

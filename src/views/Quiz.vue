@@ -25,11 +25,15 @@
           <b-col cols="1" class="d-none d-lg-block" />
           <b-col>
             <b-container class="content">
-              <QuizArea @returnToOptions="endQuiz" @setState="setState" :options="options" />
+              <QuizArea
+                @returnToOptions="endQuiz"
+                @setState="setState"
+                :options="options"
+              />
             </b-container>
           </b-col>
-          <b-col cols="5" class="d-none d-xl-block" align-self="center">
-            <aki-photo :quizState="quizState" />
+          <b-col cols="5" class="d-xl-block" align-self="center">
+            <AkiDisplay :state="state" />
           </b-col>
         </b-row>
       </b-container>
@@ -40,13 +44,13 @@
 <script>
 import Options from "@/components/Options.vue";
 import QuizArea from "@/components/QuizArea.vue";
-import AkiPhoto from "@/components/AkiPhoto.vue";
+import AkiDisplay from "@/components/AkiDisplay.vue";
 export default {
   name: "Quiz",
   components: {
     Options,
     QuizArea,
-    AkiPhoto,
+    AkiDisplay
   },
   computed: {
     settingsValid() {
@@ -54,29 +58,28 @@ export default {
         return true;
       }
       return false;
-    },
+    }
   },
   data() {
     return {
       options: {},
       quizDisplay: false,
-      quizState: undefined
+      state: undefined
     };
   },
   methods: {
     setOptions(options) {
       this.options = options;
     },
+    setState(state) {
+      this.state = state;
+    },
     beginQuiz() {
       this.quizDisplay = true;
-      this.quizState = "prompt"
     },
     endQuiz() {
       this.quizDisplay = false;
-    },
-    setState(s) {
-      this.quizState = s
     }
-  },
+  }
 };
 </script>
