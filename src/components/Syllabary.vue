@@ -3,6 +3,7 @@
     <br />
     <br />
     <b-container class="content">
+      <br />
       <b-row no-gutters style="border: 1px solid blue">
         <b-col style="border-right: 1px blue solid" cols="2" />
         <b-col
@@ -40,7 +41,7 @@
             @click="playSound(i.columns[v].file)"
             class="clickable"
           >
-            <b-img fluid :src="require('@/assets/appleBtn.png')" />
+            <b-img fluid :src="require('@/assets/appleBtn' + Math.floor(Math.random() * totalAppleVariations)  + '.png')" />
             <span
               class="position-absolute text-white"
               style="         
@@ -52,10 +53,8 @@
             >
           </div>
         </b-col>
-        <br />
-        <br />
-        <br />
       </b-row>
+      <br />
     </b-container>
     <br />
     <br />
@@ -76,7 +75,8 @@ export default {
       audioSrc: "",
       vowelArray: ["a", "i", "u", "e", "o"],
       itemColClass: "item-col",
-      lastItemClass: "last-item"
+      lastItemClass: "last-item",
+      totalAppleVariations: 3
     };
   },
   methods: {
@@ -107,8 +107,16 @@ export default {
   border-left: 1px blue solid;
   border-right: 1px blue solid;
 }
+.clickable:hover {
+  background-color: rgba(251, 202, 141, 0.85);
+}
+.clickable:active {
+  background-color: rgba(251, 181, 141, 0.85);
+}
+
 .last-item {
   border-left: 1px blue solid;
+  border-right: 1px blue solid;
 }
 .clickable {
   cursor: pointer;

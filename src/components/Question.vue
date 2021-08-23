@@ -8,7 +8,7 @@
         </h1>
         <div v-else>
           <div class="clickable" @click="playSound(question.answer.file)">
-            <b-img fluid :src="require('@/assets/appleBtn.png')" />
+            <b-img fluid :src="require('@/assets/appleBtn0.png')" />
             <span
               class="position-absolute text-white"
               style="         
