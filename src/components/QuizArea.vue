@@ -40,7 +40,6 @@
             </div>
           </b-col>
         </b-row>
-        <br />
       </b-container>
     </div>
     <div v-else id="resultsUI">
@@ -82,6 +81,15 @@
         <br />
         <br />
 
+        <b-row>
+          <b-col>
+            <b-btn @click="startGame" size="lg" variant="success">
+              Restart
+            </b-btn>
+          </b-col>
+        </b-row>
+
+        <br />
         <b-row>
           <b-col>
             <b-btn variant="info" @click="returnToOptions" size="lg"
@@ -143,6 +151,7 @@ export default {
   },
   methods: {
     startGame() {
+      this.resetScore();
       this.gameState = "ongoing";
       this.displayNextQuestion();
       this.startTimer();
@@ -182,17 +191,16 @@ export default {
     clearTimer() {
       this.stopTimer();
       switch (this.options.timeOption) {
-        case "#": {
-          break;
-        }
         case "Timed": {
           this.currentTimer = this.options.overallTime * 60;
           break;
         }
         default: {
+          this.currentTimer = 0;
           break;
         }
       }
+      this.formattedTime = this.formatTime(this.currentTimer);
     },
     formatTime(seconds) {
       let measuredTime = new Date(null);
@@ -308,6 +316,10 @@ export default {
     },
     returnToOptions() {
       this.$emit("returnToOptions");
+    },
+    resetScore() {
+      this.questionsAnswered = 0;
+      this.questionsAnsweredCorrectly = 0;
     }
   },
   watch: {

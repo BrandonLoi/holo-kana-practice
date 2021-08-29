@@ -57,20 +57,6 @@
                 />minute(s)
               </b-col>
             </b-row>
-
-            <br />
-
-            <b-row>
-              <b-col class="my-auto text-right">Question:</b-col>
-              <b-col>
-                <b-form-input
-                  v-model="questionTimeString"
-                  type="number"
-                  :min="questionTimeMin"
-                  :max="questionTimeMax"
-                />second(s)
-              </b-col>
-            </b-row>
           </div>
           <div v-else-if="timeSelect == 'Unlimited'">
             <b-row>
@@ -104,7 +90,6 @@ export default {
         timeOption: this.timeSelect,
         numberOfQuestions: this.numberOfQuestionsValue,
         overallTime: this.overallTimeValue,
-        questionTimeValue: this.questionTimeValue,
         mistakeLimitValue: this.mistakeLimitValue
       };
     },
@@ -114,14 +99,6 @@ export default {
         this.overallTimeDefault,
         this.overallTimeMin,
         this.overallTimeMax
-      );
-    },
-    questionTimeValue() {
-      return this.numberCheck(
-        this.questionTimeString,
-        this.questionTimeDefault,
-        this.questionTimeMin,
-        this.questionTimeMax
       );
     },
     numberOfQuestionsValue() {
@@ -143,7 +120,7 @@ export default {
   },
   data() {
     return {
-      //new easy toggles
+
       kanaSelect: ["Hiragana", "Katakana"],
       kanaOptions: ["Hiragana", "Katakana"],
 
@@ -162,12 +139,6 @@ export default {
       overallTimeDefault: 2,
       overallTimeMin: 1,
       overallTimeMax: 60,
-
-      //timed - question time
-      questionTimeString: "20",
-      questionTimeDefault: 20,
-      questionTimeMin: 5,
-      questionTimeMax: 60,
 
       //unlimited - mistake limit
       mistakeLimitString: "5",

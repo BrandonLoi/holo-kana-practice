@@ -7,7 +7,11 @@
           {{ question.answer[question.promptDisplay] }}
         </h1>
         <div v-else>
-          <div class="clickable" @click="playSound(question.answer.file)">
+          <div
+            class="clickable"
+            @click="playSound(question.answer.file)"
+            style="margin: auto; max-width: 90px; max-height: 90px;"
+          >
             <b-img fluid :src="require('@/assets/appleBtn0.png')" />
             <span
               class="position-absolute text-white"

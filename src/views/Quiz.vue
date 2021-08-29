@@ -1,4 +1,4 @@
-<template>
+ro<template>
   <div class="quiz">
     <b-container class="content" v-if="!quizDisplay">
       <Options @setOptions="setOptions" />
@@ -33,7 +33,7 @@
             </b-container>
           </b-col>
           <b-col cols="5" class="d-xl-block" align-self="center">
-            <AkiDisplay :state="state" />
+            <AkiDisplay class="akiStyle" :state="state" />
           </b-col>
         </b-row>
       </b-container>
@@ -64,7 +64,8 @@ export default {
     return {
       options: {},
       quizDisplay: false,
-      state: undefined
+      state: undefined,
+      akiRotate: 3
     };
   },
   methods: {
@@ -83,3 +84,16 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.akiStyle {
+  border: solid 5px;
+  border-image: linear-gradient(#9cec5a, #e29191) 30;
+  background-color: rgba(135, 0, 28, 0.85);
+}
+
+.quizBorder {
+  border: solid 5px;
+  border-image: linear-gradient(#9cec5a, #e29191) 30;
+}
+</style>
