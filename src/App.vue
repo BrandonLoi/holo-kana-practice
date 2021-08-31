@@ -55,6 +55,7 @@
 
 .content {
   background-color: rgba(255, 228, 196, 0.85);
+  border: 2mm ridge rgba(255, 52, 52, 0.6);
 }
 
 body {
@@ -63,5 +64,12 @@ body {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
   background-attachment: fixed;
+
 }
+
+  /* custom mouse */
+* {
+  cursor: url("./assets/akiMouseResize.png"), auto !important;
+}
+
 </style>
