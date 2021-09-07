@@ -78,8 +78,7 @@
                 : 'visibility: hidden'
             "
           >
-            <b-col />
-            <b-col cols="3">
+            <b-col>
               <b-btn
                 block
                 pill
@@ -89,7 +88,6 @@
                 >Check</b-btn
               >
             </b-col>
-            <b-col />
           </b-row>
         </b-container>
       </b-col>

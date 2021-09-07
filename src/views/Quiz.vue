@@ -32,7 +32,7 @@ ro<template>
               />
             </b-container>
           </b-col>
-          <b-col cols="5" class="d-xl-block" align-self="center">
+          <b-col cols="5" class="d-none d-xl-block" align-self="center">
             <AkiDisplay class="akiStyle" :state="state" />
           </b-col>
         </b-row>

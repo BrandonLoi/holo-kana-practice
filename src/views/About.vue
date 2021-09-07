@@ -36,9 +36,8 @@
               Jon
             </span>
             <span :class="hClass">
-              desu
+              desu.
             </span>
-            .
             <br />
             <span :class="kanjiClass">M</span>
             <span :class="hClass">y </span>
@@ -95,11 +94,11 @@
             <b-col cols="4">
               <b-container fluid>
                 <b-row>
-                  <b-col><h5>あ</h5></b-col>
-                  <b-col><h5>い</h5></b-col>
-                  <b-col><h5>う</h5></b-col>
-                  <b-col><h5>え</h5></b-col>
-                  <b-col><h5>お</h5></b-col>
+                  <b-col><h5 class="hiragana">あ</h5></b-col>
+                  <b-col><h5 class="hiragana">い</h5></b-col>
+                  <b-col><h5 class="hiragana">う</h5></b-col>
+                  <b-col><h5 class="hiragana">え</h5></b-col>
+                  <b-col><h5 class="hiragana">お</h5></b-col>
                 </b-row>
                 <b-row>
                   <b-col><h5>a</h5></b-col>
@@ -179,6 +178,34 @@
           <b-row>
             <b-col><h5>Kanji</h5></b-col>
           </b-row>
+          <b-row>
+            <b-col>
+              Kanji are adapted Chinese characters that are used alongside
+              Hiragana and Katakana. Often they are used to represent a commonly
+              spoken phrase or name.
+            </b-col>
+          </b-row>
+          <b-row>
+            <b-col
+              ><h5 class="kanji">女性</h5>
+              <h5>woman</h5></b-col
+            >
+            <b-col
+              ><h5 class="kanji">山</h5>
+              <h5>mountain</h5></b-col
+            >
+            <b-col
+              ><h5 class="kanji">文</h5>
+              <h5>writing</h5></b-col
+            >
+          </b-row>
+          <b-row>
+            <b-col
+              >These require memorization to write/read and sometimes are
+              accompanied by small Hiragana readings above them (Furigana) when
+              the symbol is uncommon.</b-col
+            >
+          </b-row>
         </b-container>
       </b-collapse>
       <b-row> </b-row>
@@ -248,7 +275,7 @@ export default {
           break;
       }
     }
-  },
+  }
 };
 </script>
 
