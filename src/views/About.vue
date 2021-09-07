@@ -71,14 +71,14 @@
       <br />
       <b-row>
         <b-col class="text-center">
-          <b-collapse v-model="userHighlight">
+          <b-collapse :visible="userHighlight">
             <b-btn @click="highlightText()">Close</b-btn>
           </b-collapse>
         </b-col>
       </b-row>
       <br />
       <b-collapse v-model="hHighlight">
-        <b-container-fluid>
+        <b-container fluid>
           <b-row>
             <b-col class="text-center">
               <h5>Hiragana</h5>
@@ -93,7 +93,7 @@
               spaces:
             </b-col>
             <b-col cols="4">
-              <b-container-fluid>
+              <b-container fluid>
                 <b-row>
                   <b-col><h5>あ</h5></b-col>
                   <b-col><h5>い</h5></b-col>
@@ -108,7 +108,7 @@
                   <b-col><h5>e</h5></b-col>
                   <b-col><h5>o</h5></b-col>
                 </b-row>
-              </b-container-fluid>
+              </b-container>
             </b-col>
           </b-row>
           <br />
@@ -119,7 +119,7 @@
               </h5>
             </b-col>
           </b-row>
-        </b-container-fluid>
+        </b-container>
       </b-collapse>
       <b-collapse v-model="kataHighlight">
         <b-container>
@@ -188,13 +188,6 @@
 <script>
 export default {
   name: "About",
-  data() {
-    return {
-      hHighlight: false,
-      kataHighlight: false,
-      kanjiHighlight: false
-    };
-  },
   computed: {
     userHighlight() {
       if (this.hHighlight || this.kataHighlight || this.kanjiHighlight) {
@@ -221,7 +214,13 @@ export default {
       return this.kanjiHighlight ? "kanji" : "noHighlight";
     }
   },
-
+  data() {
+    return {
+      hHighlight: false,
+      kataHighlight: false,
+      kanjiHighlight: false
+    };
+  },
   methods: {
     highlightText(h) {
       switch (h) {
@@ -249,7 +248,7 @@ export default {
           break;
       }
     }
-  }
+  },
 };
 </script>
 
