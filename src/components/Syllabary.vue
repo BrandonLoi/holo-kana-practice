@@ -41,7 +41,14 @@
             @click="playSound(i.columns[v].file)"
             class="clickable"
           >
-            <b-img fluid :src="require('@/assets/appleBtn' + Math.floor(Math.random() * totalAppleVariations)  + '.png')" />
+            <b-img
+              fluid
+              :src="
+                require('@/assets/appleBtn' +
+                  Math.floor(Math.random() * totalAppleVariations) +
+                  '.png')
+              "
+            />
             <span
               class="position-absolute text-white"
               style="         
@@ -82,7 +89,7 @@ export default {
   methods: {
     playSound(sound) {
       if (sound) {
-        let audio = new Audio(require("@/assets/" + sound));
+        const audio = new Audio(require("@/assets/" + sound));
         audio.play();
       }
     }

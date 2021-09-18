@@ -64,12 +64,10 @@ body {
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
   background-attachment: fixed;
-
 }
 
-  /* custom mouse */
+/* custom mouse */
 * {
   cursor: url("./assets/akiMouseResize.png"), auto !important;
 }
-
 </style>

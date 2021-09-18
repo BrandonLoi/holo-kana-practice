@@ -269,7 +269,6 @@ export default {
           break;
         default:
           this.hHighlight = false;
-
           this.kataHighlight = false;
           this.kanjiHighlight = false;
           break;
