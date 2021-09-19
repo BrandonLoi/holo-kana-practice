@@ -20,7 +20,7 @@ export default {
       //number of Aki images in @/assets/akiPoses for each state
       maxPrompt: 1,
       maxCorrect: 5,
-      maxIncorrect: 1
+      maxIncorrect: 7
     };
   },
   watch: {
