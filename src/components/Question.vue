@@ -71,13 +71,7 @@
             <br />
             <br />
           </b-row>
-          <b-row
-            :style="
-              selectedAnswer != undefined && !disabledState
-                ? 'visibility: visible'
-                : 'visibility: hidden'
-            "
-          >
+          <b-row>
             <b-col>
               <b-btn
                 block
@@ -85,10 +79,12 @@
                 @click="confirmAnswer()"
                 variant="primary"
                 size="lg"
+                :disabled="selectedAnswer == undefined || disabledState"
                 >Check</b-btn
               >
             </b-col>
           </b-row>
+          <br />
         </b-container>
       </b-col>
     </b-row>

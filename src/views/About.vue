@@ -163,12 +163,13 @@
               </h5>
             </b-col>
           </b-row>
+          <br />
           <b-row class="text-center">
             <b-col>
-              Remember though, in Japanese these words are still using the
-              Japanese language's possible sounds. <br />Due to this, sometimes
-              words will sound slightly differently (often times an extra
-              syllable) from their original pronunciation.
+              In Japanese these words are still using the Japanese language's
+              possible sounds. <br />Sometimes words will sound slightly
+              differently (often times an extra syllable) from their original
+              pronunciation.
             </b-col>
           </b-row>
         </b-container>
@@ -208,8 +209,87 @@
           </b-row>
         </b-container>
       </b-collapse>
-      <b-row> </b-row>
+      <br />
+      <hr />
+      <b-row>
+        <b-col>
+          This site lets you practice Hiragana and Katakana on the
+          <router-link class="link" to="/study">Study</router-link> and
+          <router-link class="link" to="/quiz">Quiz</router-link> pages.
+        </b-col>
+      </b-row>
+      <br />
+      <b-row>
+        <b-col cols="7" align-self="center"
+          >The audio used on this fansite is from
+          <strong>Aki Rosenthal</strong>, a Virtual Youtuber as a part of
+          Hololive's First Generation. I encourage you to check out her fun and
+          relaxing streams as well as some of her excellent
+          <a href="https://www.youtube.com/watch?v=Ii7rtNaGlls" target="_blank"
+            >songs
+          </a>
+          <a href="https://www.youtube.com/watch?v=8fqjcg2uRYs" target="_blank"
+            >and
+          </a>
+          <a href="https://www.youtube.com/watch?v=3y5-Fl2ExIA" target="_blank"
+            >music
+          </a>
+          <a href="https://www.youtube.com/watch?v=eN--w_NA6hs" target="_blank"
+            >videos</a
+          >
+          <br />
+          <br />
+          Many of the voices heard here were recorded by Aki in this stream:
+          <br />
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/Y4h-hiKeNTg"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </b-col>
+        <b-col>
+          <b-img
+            thumbnail
+            width="250"
+            :src="require('@/assets/portrait.webp')"
+          />
+          <br />
+          <br />
+          <!-- Social Links -->
+          <div style="margin-left: auto; margin-right: auto; display: table">
+            <b-button
+              href="https://www.youtube.com/channel/UCFTLzh12_nrtzqBPsTCqenA"
+              block
+              variant="danger"
+              target="_blank"
+              >Aki's Youtube Channel</b-button
+            >
+            <b-button
+              href="https://en.hololive.tv/portfolio/items/aki-rosenthal"
+              block
+              variant="success"
+              target="_blank"
+              >Aki's English Bio Page</b-button
+            >
+            <b-button
+              href="https://twitter.com/akirosenthal"
+              block
+              variant="primary"
+              target="_blank"
+              >Aki's Twitter</b-button
+            >
+          </div>
+        </b-col>
+      </b-row>
+      <br />
     </b-container>
+    <br />
+    <br />
+    <br />
   </div>
 </template>
 <script>
@@ -289,6 +369,10 @@ export default {
   color: red;
 }
 .noHighlight {
+  color: #2c3e50;
+}
+.link {
+  font-weight: bold;
   color: #2c3e50;
 }
 </style>
