@@ -12,7 +12,9 @@
 
       <b-row>
         <b-col class="text-center">
-          <h3>
+          <p
+            style="clear: both; display: inline-block; overflow: hidden; white-space: nowrap;"
+          >
             <span :class="kanjiClass">私</span>
             <span :class="hClass">の</span>
             <span :class="kanjiClass">名前</span>
@@ -44,25 +46,38 @@
             <span :class="kanjiClass">name </span>
             <span :class="hClass">is </span>
             <span :class="kataClass">John</span>.
-          </h3>
+          </p>
         </b-col>
       </b-row>
 
-      <br />
-
       <b-row class="text-center">
-        <b-col>
-          <b-btn @click="highlightText('Hiragana')" size="lg" variant="success">
+        <b-col sm>
+          <b-btn
+            class="mt-1"
+            @click="highlightText('Hiragana')"
+            size="lg"
+            variant="success"
+          >
             Hiragana
           </b-btn>
         </b-col>
-        <b-col>
-          <b-btn @click="highlightText('Katakana')" size="lg" variant="primary">
+        <b-col sm>
+          <b-btn
+            class="mt-1"
+            @click="highlightText('Katakana')"
+            size="lg"
+            variant="primary"
+          >
             Katakana
           </b-btn>
         </b-col>
-        <b-col>
-          <b-btn @click="highlightText('Kanji')" size="lg" variant="danger">
+        <b-col sm>
+          <b-btn
+            class="mt-1"
+            @click="highlightText('Kanji')"
+            size="lg"
+            variant="danger"
+          >
             Kanji
           </b-btn>
         </b-col>
@@ -84,38 +99,24 @@
             </b-col>
           </b-row>
           <b-row>
-            <b-col>
+            <b-col align-self="center">
               Hiragana is made of 46 symbols that can represent every sound in
               the Japanese language. However, reading/writing exclusively with
               Hiragana would be difficult and time consuming. Doing so would be
               analagous to reading/writing english with lowercase letters and no
               spaces:
+              <br />
+              <br />
+              <p>
+                itwouldbehardtoreadlikethis
+              </p>
             </b-col>
-            <b-col cols="4">
-              <b-container fluid>
-                <b-row>
-                  <b-col><h5 class="hiragana">あ</h5></b-col>
-                  <b-col><h5 class="hiragana">い</h5></b-col>
-                  <b-col><h5 class="hiragana">う</h5></b-col>
-                  <b-col><h5 class="hiragana">え</h5></b-col>
-                  <b-col><h5 class="hiragana">お</h5></b-col>
-                </b-row>
-                <b-row>
-                  <b-col><h5>a</h5></b-col>
-                  <b-col><h5>i</h5></b-col>
-                  <b-col><h5>u</h5></b-col>
-                  <b-col><h5>e</h5></b-col>
-                  <b-col><h5>o</h5></b-col>
-                </b-row>
-              </b-container>
-            </b-col>
-          </b-row>
-          <br />
-          <b-row class="text-center">
             <b-col>
-              <h5>
-                thisisprettyhardtoreadafterawhile,isntit?
-              </h5>
+              <b-table
+                table-variant="info"
+                bordered
+                :items="hiraganaExamples"
+              />
             </b-col>
           </b-row>
         </b-container>
@@ -209,18 +210,19 @@
           </b-row>
         </b-container>
       </b-collapse>
-      <br />
       <hr />
       <b-row>
         <b-col>
           This site lets you practice Hiragana and Katakana on the
           <router-link class="link" to="/study">Study</router-link> and
-          <router-link class="link" to="/quiz">Quiz</router-link> pages.
+          <router-link class="link" to="/quiz">Quiz</router-link> pages. <br />I
+          made this site to help myself study kana and to practice using the
+          Vue.js framework.
         </b-col>
       </b-row>
       <br />
       <b-row>
-        <b-col cols="7" align-self="center"
+        <b-col md="7" align-self="center"
           >The audio used on this fansite is from
           <strong>Aki Rosenthal</strong>, a Virtual Youtuber as a part of
           Hololive's First Generation. I encourage you to check out her fun and
@@ -241,17 +243,11 @@
           <br />
           Many of the voices heard here were recorded by Aki in this stream:
           <br />
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube-nocookie.com/embed/Y4h-hiKeNTg"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          <a href="https://youtu.be/Y4h-hiKeNTg" target="_blank">
+            <b-img fluid :src="require('@/assets/audioVidThumbnail.jpg')" />
+          </a>
         </b-col>
-        <b-col>
+        <b-col md class="mt-2">
           <b-img
             thumbnail
             width="250"
@@ -325,7 +321,14 @@ export default {
     return {
       hHighlight: false,
       kataHighlight: false,
-      kanjiHighlight: false
+      kanjiHighlight: false,
+      hiraganaExamples: [
+        { hiragana: "あ", latin: "a" },
+        { hiragana: "い", latin: "i" },
+        { hiragana: "う", latin: "u" },
+        { hiragana: "え", latin: "e" },
+        { hiragana: "お", latin: "o" }
+      ]
     };
   },
   methods: {

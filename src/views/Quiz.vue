@@ -22,7 +22,6 @@ ro<template>
     <div v-else>
       <b-container fluid>
         <b-row>
-          <b-col cols="1" class="d-none d-lg-block" />
           <b-col>
             <b-container class="content">
               <QuizArea
@@ -32,10 +31,13 @@ ro<template>
               />
             </b-container>
           </b-col>
-          <b-col cols="5" class="d-none d-xl-block" align-self="center">
+          <b-col lg="5" class="mt-2" align-self="center">
             <AkiDisplay class="akiStyle" :state="state" />
           </b-col>
         </b-row>
+      <br />
+      <br />
+
       </b-container>
     </div>
   </div>

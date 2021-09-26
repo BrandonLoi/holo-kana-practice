@@ -1,7 +1,5 @@
 <template>
   <div id="syllabaryContainer">
-    <br />
-    <br />
     <b-container class="content">
       <br />
       <b-row no-gutters style="border: 1px solid blue">

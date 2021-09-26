@@ -1,26 +1,28 @@
 <template>
-  <b-container fluid id="app">
-    <br />
-    <b-row>
-      <b-col />
-      <b-col id="nav" class="content">
-        <router-link to="/">About</router-link>
-        &nbsp;
-        <router-link to="/study">Study</router-link>
-        &nbsp;
-        <router-link to="/quiz">Quiz</router-link>
-      </b-col>
-      <b-col />
-    </b-row>
-    <br />
-    <b-row>
-      <b-col>
-        <transition name="fade">
-          <router-view />
-        </transition>
-      </b-col>
-    </b-row>
-  </b-container>
+  <div>
+    <b-navbar toggleable="sm" type="dark" variant="success">
+      <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
+
+      <b-navbar-brand>Kana with Aki</b-navbar-brand>
+
+      <b-collapse id="nav-text-collapse" is-nav>
+        <b-navbar-nav>
+          <b-nav-item to="/">About</b-nav-item>
+          <b-nav-item to="/study">Study</b-nav-item>
+          <b-nav-item to="/quiz">Quiz</b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
+    <b-container fluid id="app">
+      <b-row class="mt-2">
+        <b-col>
+          <transition name="fade">
+            <router-view />
+          </transition>
+        </b-col>
+      </b-row>
+    </b-container>
+  </div>
 </template>
 
 <style>
