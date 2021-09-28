@@ -292,6 +292,26 @@
           </div>
         </b-col>
       </b-row>
+      <hr />
+      <b-row class="mt-4" align-h="center">
+        <b-col md="4">
+          <h5>Credits</h5>
+          <ul class="text-left">
+            <li>
+              <a href="https://twitter.com/brandon_loi">@brandon_loi</a> -
+              Design & Layout
+            </li>
+            <li>
+              <a href="https://twitter.com/whoisknees">@whoisknees</a> - "Study"
+              Page Layout
+            </li>
+            <li>
+              <a href="https://twitter.com/__Rudeus">@__Rudeus</a> - Background
+              Image
+            </li>
+          </ul>
+        </b-col>
+      </b-row>
       <br />
     </b-container>
     <br />
