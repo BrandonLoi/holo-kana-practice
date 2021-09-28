@@ -1,8 +1,11 @@
 <template>
   <div>
-    <b-navbar toggleable="sm" type="dark" variant="success">
+    <b-navbar
+      toggleable="sm"
+      type="dark"
+      style="background-color: rgba(55,117,13)"
+    >
       <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
-
       <b-navbar-brand>Kana with Aki</b-navbar-brand>
 
       <b-collapse id="nav-text-collapse" is-nav>

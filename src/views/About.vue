@@ -220,7 +220,7 @@
           Vue.js framework.
         </b-col>
       </b-row>
-      <br />
+      <hr />
       <b-row>
         <b-col md="7" align-self="center"
           >The audio used on this fansite is from
@@ -244,10 +244,21 @@
           Many of the voices heard here were recorded by Aki in this stream:
           <br />
           <a href="https://youtu.be/Y4h-hiKeNTg" target="_blank">
-            <b-img fluid :src="require('@/assets/audioVidThumbnail.jpg')" />
+            <b-img
+              fluid
+              thumbnail
+              :src="require('@/assets/audioVidThumbnail.jpg')"
+            />
           </a>
         </b-col>
-        <b-col md class="mt-2">
+        <b-col md class="mt-1">
+          <!-- <b-btn @click="playAkiAudio" class="mb-3" variant="warning" :default=`Example of Aki's Voice {{ akiSoundIndex % (akiSoundFiles.length + 1) }} /{{ akiSoundFiles.length + 1 }} ▶` /> -->
+          <b-btn @click="playAkiAudio" class="mb-3" variant="warning">
+            Example of Aki's Voice ▶
+            {{ (akiSoundIndex % (akiSoundFiles.length + 1)) + 1 }} /
+            {{ akiSoundFiles.length + 1 }}
+          </b-btn>
+          <br />
           <b-img
             thumbnail
             width="250"
@@ -328,6 +339,58 @@ export default {
         { hiragana: "う", latin: "u" },
         { hiragana: "え", latin: "e" },
         { hiragana: "お", latin: "o" }
+      ],
+      akiSoundIndex: 0,
+      akiSoundFiles: [
+        "kanpai",
+        "cheers",
+        "japaneseAnimation",
+        "noPineapple1",
+        "noPineapple2",
+        "noPineapple3",
+        "noPineapple4",
+        "noPineapple5",
+        "noPineapple6",
+        "noPineapple7",
+        "noPineapple8",
+        "noPineapple9",
+        "noPineapple10",
+        "noPineapple11",
+        "noPineapple12",
+        "noPineapple13",
+        "duhDuhduh",
+        "explosion",
+        "konosuba",
+        "giggle",
+        "neko",
+        "nyan1",
+        "nyan2",
+        "nyan3",
+        "nyan4",
+        "nyan5",
+        "nyan6",
+        "nyan7",
+        "giggle2",
+        "wafoo1",
+        "wafoo2",
+        "wafoo3",
+        "justDoIt1",
+        "justDoIt2",
+        "justDoIt3",
+        "justDoIt4",
+        "dorime1",
+        "iterimoAdapareDorime",
+        "amenoAmeno",
+        "latire",
+        "latiremo",
+        "dorime2",
+        "ameno1",
+        "umandeimepibeameno",
+        "imeterinano",
+        "machiheno",
+        "machino",
+        "ameno2",
+        "giggle3"
       ]
     };
   },
@@ -356,6 +419,16 @@ export default {
           this.kanjiHighlight = false;
           break;
       }
+    },
+    playAkiAudio() {
+      /* eslint-disable global-require */
+      const audio = new Audio(
+        require("@/assets/akiNoises/" +
+          this.akiSoundFiles[this.akiSoundIndex++ % this.akiSoundFiles.length] +
+          ".mp3")
+      );
+      audio.play();
+      /* eslint-enable global-require */
     }
   }
 };

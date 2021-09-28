@@ -35,9 +35,8 @@ ro<template>
             <AkiDisplay class="akiStyle" :state="state" />
           </b-col>
         </b-row>
-      <br />
-      <br />
-
+        <br />
+        <br />
       </b-container>
     </div>
   </div>

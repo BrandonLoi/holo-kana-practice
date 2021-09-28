@@ -120,7 +120,6 @@ export default {
   },
   data() {
     return {
-
       kanaSelect: ["Hiragana", "Katakana"],
       kanaOptions: ["Hiragana", "Katakana"],
 
